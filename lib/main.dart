@@ -37,6 +37,18 @@ class MyApp extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(2.0),
+            borderSide: const BorderSide(
+              color: Colors.grey,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(2.0),
+            borderSide: const BorderSide(
+              color: Colors.grey,
+            ),
+          ),
         ),
       ),
       debugShowCheckedModeBanner: false,
