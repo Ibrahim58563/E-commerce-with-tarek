@@ -1,4 +1,4 @@
-package com.example.flutter_ecommerce_tarek
+package com.hima_ecommerce
 
 import io.flutter.embedding.android.FlutterActivity
 
