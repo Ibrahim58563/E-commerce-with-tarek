@@ -11,7 +11,7 @@ class ListItemHome extends StatelessWidget {
     return SizedBox(
       height: 200,
       child: DecoratedBox(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -69,11 +69,21 @@ class ListItemHome extends StatelessWidget {
             const SizedBox(
               height: 6.0,
             ),
-            Text(
-              '${product.price}\$',
-              style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                    color: Colors.grey,
+            Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: '${product.price}\$',
+                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                          color: Colors.grey,
+                          decoration: TextDecoration.lineThrough,
+                        ),
                   ),
+                  TextSpan(
+                      text:
+                          ' ${product.price * (product.discountValue) / 100}\$'),
+                ],
+              ),
             ),
           ],
         ),
