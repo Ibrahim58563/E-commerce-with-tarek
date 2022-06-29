@@ -34,7 +34,7 @@ class _LoginPageState extends State<AuthPage> {
     try {
       await model.submit();
       if (!mounted) return;
-      Navigator.of(context).pushNamed(AppRoutes.bottomNavBarRoute);
+      // Navigator.of(context).pushNamed(AppRoutes.bottomNavBarRoute);
     } catch (e) {
       showDialog(
         context: context,
