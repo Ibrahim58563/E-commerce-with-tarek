@@ -5,6 +5,7 @@ import 'package:flutter_ecommerce_tarek/views/pages/auth_page.dart';
 import 'package:flutter_ecommerce_tarek/views/pages/home_page.dart';
 import 'package:provider/provider.dart';
 
+import '../../controllers/database_controller.dart';
 import '../../services/auth.dart';
 import 'bottom_navbar.dart';
 
@@ -22,10 +23,10 @@ class LandingPage extends StatelessWidget {
             if (user == null) {
               return ChangeNotifierProvider<AuthController>(
                 create: (_) => AuthController(auth: auth),
-                child: const AuthPage(),
+                child: Provider<Database>(
+                    create: (_) => FirestoreDatabase(user!.uid),
+                    child: const BottomNavbar()),
               );
-            } else {
-              return const BottomNavbar();
             }
           }
           return const Scaffold(

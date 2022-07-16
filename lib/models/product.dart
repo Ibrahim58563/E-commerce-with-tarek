@@ -7,7 +7,7 @@ class Product {
   final String imaUrl;
   final int discountValue;
   final String category;
-  final double? rate;
+  final int? rate;
 
   Product({
     required this.id,
@@ -30,15 +30,15 @@ class Product {
     };
   }
 
-  factory Product.fromMap(Map<String, dynamic> map) {
+  factory Product.fromMap(Map<String, dynamic> map, String documentId) {
     return Product(
-      id: map['id'] as String,
+      id: documentId,
       title: map['title'] as String,
       price: map['price'] as int,
       imaUrl: map['imgUrl'] as String,
       discountValue: map['discountValue'] as int,
       category: map['category'] as String,
-      rate: map['rate'] as double,
+      rate: map['rate'] as int,
     );
   }
 }
